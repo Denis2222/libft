@@ -8,3 +8,7 @@ int		ft_strlen(char *str);
 void	ft_swap(int *a, int *b);
 char	*ft_strrev(char *str);
 int		ft_atoi(char *str);
+int		ft_isdigit(char c);
+
+char	*ft_strcpy(char *dest, char *src);
+

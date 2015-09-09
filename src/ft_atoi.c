@@ -1,13 +1,5 @@
 #include <libft.h>
 
-int	ft_isnum(char c)
-{
-	if( '0' <= c && c <= '9')
-		return (1);
-	else 
-		return (0);
-}
-
 int	ft_atoi(char *str)
 {
 	int nb;
@@ -32,7 +24,7 @@ int	ft_atoi(char *str)
 	}
 	while(pos < length)
 	{
-		if (!ft_isnum(str[pos]))
+		if (!ft_isdigit(str[pos]))
 		{
 			return (nb * positive);
 		}

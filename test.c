@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 #include <libft.h>
 
 int	main(void)
@@ -36,7 +37,7 @@ int	main(void)
 	ft_putstr(ft_strrev(t));
 	ft_putstr("\nft_strrev(str):\n");
 	ft_putstr(ft_strrev(str));
-*/
+
 	ft_putstr("\n=============================\n");
 
 	char *str[] = {"123","456","-154","g555","555g","-66tt","--99","--33gt"," 6"," -5","  -56k",'\0'};
@@ -46,6 +47,10 @@ int	main(void)
 		printf(" \"%s\" : (%d) = (%d) ", str[x], ft_atoi(str[x]), atoi(str[x]));
 		x++;
 	}
+*/
+	char dest[100];
+
+	ft_putstr(strcpy(dest, "Toto"));
 
 	return (0);
 }
