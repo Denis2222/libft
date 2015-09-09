@@ -10,7 +10,6 @@ void	ft_cswap(char *a, char *b)
 
 char *ft_strrev(char *str)
 {
-
 	int length;
 	int debut;
 	int fin;
@@ -18,13 +17,11 @@ char *ft_strrev(char *str)
 	debut = 0;
 	length = ft_strlen(str);
 	fin = length - 1;
-
 	while(debut < fin)
 	{
 		ft_cswap(&str[debut], &str[fin]);
 		debut++;
 		fin--;
 	}
-	ft_putstr(str);
 	return (str);
 }
