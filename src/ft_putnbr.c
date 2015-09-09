@@ -5,6 +5,7 @@ void	ft_putnbr(int nbr)
 	if (nbr < 0)
 	{
 		ft_putchar('-');
+		nbr *= -1;
 	}
 
 	if (nbr > 9)
