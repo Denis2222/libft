@@ -50,7 +50,11 @@ int	main(void)
 */
 	char dest[100];
 
-	ft_putstr(strcpy(dest, "Toto"));
+	ft_putstr(strncpy(dest, "Hello World Of Goo !", 9));
+	printf("%s", dest);
 
+	ft_putstr(ft_strncpy(dest, "Hello World Of Goo !", 3));
+	printf("%s", dest);
+	
 	return (0);
 }

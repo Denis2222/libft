@@ -11,4 +11,5 @@ int		ft_atoi(char *str);
 int		ft_isdigit(char c);
 
 char	*ft_strcpy(char *dest, char *src);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
