@@ -47,14 +47,47 @@ int	main(void)
 		printf(" \"%s\" : (%d) = (%d) ", str[x], ft_atoi(str[x]), atoi(str[x]));
 		x++;
 	}
-*/
+	ft_putstr("\n=============================\n");
+
 	char dest[100];
+	strcpy(dest, "####");
 
-	ft_putstr(strncpy(dest, "Hello World Of Goo !", 9));
+	strncpy(dest,    "=======", 2);
 	printf("%s", dest);
+	printf("\n\n");
+	ft_strncpy(dest, "=======", 2);
+	printf("%s", dest);
+	ft_putstr("\n=============================\n");
 
-	ft_putstr(ft_strncpy(dest, "Hello World Of Goo !", 3));
-	printf("%s", dest);
+	char src[100];
+	char *dest;
+
+	ft_strcpy(src, "Hello World Of Insane News");
+	ft_putstr(src);
+	printf("\n\n");
+
+	dest = strstr(src, "or");
+	if (dest)
+		ft_putstr(dest);
+	else
+		ft_putstr("NULL");
+	printf("\n->\n");
+	if (ft_strstr(src, "or"))
+		ft_putstr(ft_strstr(src, "or"));
+	else
+		ft_putstr("NULL");
+	ft_putnbr(strncmp("abcde","abcdf", 4));
+	printf("\n\n");
+	ft_putnbr(ft_strncmp("abcde","abcdf", 4));
+*/
+
+	int var;
+	var = 5;
+	ft_putnbr(var);
+	printf("\n\n");
+	ft_putnbr(++var);
+	printf("\n\n");
+	ft_putnbr(var);
 	
 	return (0);
 }
