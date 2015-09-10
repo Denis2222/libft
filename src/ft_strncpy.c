@@ -10,12 +10,12 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[pos] = src[pos];
 		pos++;
 	}
-	dest[pos] = '\0';
 
 	if (pos < n)
 	{
 		while (pos < n)
 		{
+			printf("w");
 			dest[pos] = '\0';
 			pos++;
 		}
