@@ -76,18 +76,25 @@ int	main(void)
 		ft_putstr(ft_strstr(src, "or"));
 	else
 		ft_putstr("NULL");
-	ft_putnbr(strncmp("abcde","abcdf", 4));
+
+		ft_putnbr(strncmp("abcde","abcdf", 4));
 	printf("\n\n");
 	ft_putnbr(ft_strncmp("abcde","abcdf", 4));
-*/
 
-	int var;
-	var = 5;
-	ft_putnbr(var);
-	printf("\n\n");
-	ft_putnbr(++var);
-	printf("\n\n");
-	ft_putnbr(var);
-	
+
+	ft_putstr("\n=============================\n");
+	ft_putnbr(ft_isalpha('1'));
+	ft_putstr("\n=============================\n");
+
+	char str[100];
+	ft_strcpy(str,"salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un\n");
+	ft_putstr(str);
+	ft_putstr(ft_strcapitalize(str));
+*/	
+
+	ft_putstr("\n=============================\n");
+	char str[100];
+	ft_putnbr(ft_str_is_numeric(ft_strcpy(str,"012345678]9")));
+
 	return (0);
 }
