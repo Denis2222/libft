@@ -1,6 +1,6 @@
 #include <libft.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int nb;
 	int	length;
@@ -9,7 +9,7 @@ int	ft_atoi(char *str)
 
 	pos = 0;
 	nb = 0;
-	length = ft_strlen(str);
+	length = ft_strlen((char *)str);
 	positive = 1;
 	while (str[pos] == ' ')
 		pos++;
@@ -23,7 +23,7 @@ int	ft_atoi(char *str)
 	{
 		if (!ft_isdigit(str[pos]))
 			return (nb * positive);
-		nb = (nb * 10) + (str[pos] - '0');		
+		nb = (nb * 10) + (str[pos] - '0');
 		pos++;
 	}
 	return (nb * positive);
