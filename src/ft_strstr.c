@@ -1,6 +1,6 @@
 #include <libft.h>
 
-char	*ft_strstr(char *str, char *to_find)
+char	*ft_strstr(char *str, const char *to_find)
 {
 	int	pos;
 	int x;

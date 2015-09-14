@@ -1,8 +1,8 @@
 #include <libft.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	unsigned int pos;
+	size_t pos;
 	pos = 0;
 
 	while(src[pos] != '\0' && pos < n)

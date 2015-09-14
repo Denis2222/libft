@@ -90,11 +90,22 @@ int	main(void)
 	ft_strcpy(str,"salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un\n");
 	ft_putstr(str);
 	ft_putstr(ft_strcapitalize(str));
-*/	
 
 	ft_putstr("\n=============================\n");
 	char str[100];
-	ft_putnbr(ft_str_is_numeric(ft_strcpy(str,"012345678]9")));
+	ft_putnbr(ft_str_is_lowercase(ft_strcpy(str,"abcdE")));
+*/	
+	ft_putstr("\n=============================\n");
+	char strcatdest[100];
+	ft_strcpy(strcatdest, "Bonjour,Comment ca va ?");
+	ft_strncat(strcatdest, "Hello World ! Lorem Ipsum", 4);
 
+
+	ft_putstr(strcatdest);
+
+	ft_putnbr_base(255,"0123456789ABCDEF");
+	
 	return (0);
+
+
 }
