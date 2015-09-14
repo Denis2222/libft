@@ -94,7 +94,6 @@ int	main(void)
 	ft_putstr("\n=============================\n");
 	char str[100];
 	ft_putnbr(ft_str_is_lowercase(ft_strcpy(str,"abcdE")));
-*/	
 	ft_putstr("\n=============================\n");
 	char strcatdest[100];
 	ft_strcpy(strcatdest, "Bonjour,Comment ca va ?");
@@ -104,8 +103,23 @@ int	main(void)
 	ft_putstr(strcatdest);
 
 	ft_putnbr_base(255,"0123456789ABCDEF");
-	
+	ft_putstr("\n=============================\n");
+*/	
+	printf(" ft_atoi : %d |\n", ft_atoi("1234"));
+
+	ft_putnbr(ft_atoi_base(
+		"1234", 
+		"0123456789"
+		)
+	);
+	ft_putstr("\n=============================\n");
+
+	ft_putnbr(ft_atoi_base(
+		"-12", 
+		"01234567"
+		)
+	);
+
+
 	return (0);
-
-
 }
