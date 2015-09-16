@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>//malloc
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
@@ -40,3 +41,8 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t nb);
 size_t	ft_strlcat(char *dest, const char *src, size_t nb);
+
+char	*ft_strdup(char *src);
+int		*ft_range(int min, int max);
+int		ft_ultimate_range(int **range, int min, int max);
+char	*ft_concat_params(int argc, char **argv);

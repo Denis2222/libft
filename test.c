@@ -2,7 +2,7 @@
 #include <string.h>
 #include <libft.h>
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 /*
 	ft_putstr("ft_putstr : OK");
@@ -99,27 +99,33 @@ int	main(void)
 	ft_strcpy(strcatdest, "Bonjour,Comment ca va ?");
 	ft_strncat(strcatdest, "Hello World ! Lorem Ipsum", 4);
 
-
 	ft_putstr(strcatdest);
 
 	ft_putnbr_base(255,"0123456789ABCDEF");
 	ft_putstr("\n=============================\n");
-*/	
 	printf(" ft_atoi : %d |\n", ft_atoi("1234"));
 
-	ft_putnbr(ft_atoi_base(
-		"1234", 
-		"0123456789"
-		)
-	);
+	ft_putnbr(ft_atoi_base("1234","0123456789"));
 	ft_putstr("\n=============================\n");
+	ft_putnbr(ft_atoi_base("-12", "01234567"));
+	ft_putstr("\n=============================\n");
+	ft_putnbr(ft_atoi_base("FF", "0123456789ABCDEF"));
 
-	ft_putnbr(ft_atoi_base(
-		"-12", 
-		"01234567"
-		)
-	);
-
-
+	ft_putstr("\n=============================\n");
+	ft_putstr(ft_strdup("Toto"));
+	ft_putstr("\n=============================\n");
+	ft_putstr(strdup("Toto"));
+	ft_putstr("\n=============================\n");
+	
+	ft_putstr("\n=============================\n");
+	int *toto;	
+	toto = ft_range(1,512);
+	ft_putnbr(toto[511]);
+	ft_putstr("\n=============================\n");
+*/	
+	char *str;	
+	
+	str = ft_concat_params(argc, argv);	
+	ft_putstr(str);
 	return (0);
 }
