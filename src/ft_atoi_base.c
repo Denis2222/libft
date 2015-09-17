@@ -63,7 +63,7 @@ int	ft_atoi_base_r(char *str, char *base)
 	length = ft_strlen((char *)str);
 	nb = 0;
 
-	if (str[pos] == '-')
+	if (str[0] == '-')
 	{
 		positive = - 1;
 		pos++;
