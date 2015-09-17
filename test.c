@@ -122,10 +122,14 @@ int	main(int argc, char **argv)
 	toto = ft_range(1,512);
 	ft_putnbr(toto[511]);
 	ft_putstr("\n=============================\n");
-*/	
-	char *str;	
-	
+*/
+	char **tab;	
+	char *str;
 	str = ft_concat_params(argc, argv);	
-	ft_putstr(str);
+	tab = ft_split_whitespaces(str);
+	ft_print_words_tables(tab);
+	
+
+	ft_convert_base("10", "01", "0123456789");
 	return (0);
 }
