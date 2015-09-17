@@ -37,7 +37,7 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 		max = max * base_to_length;
 		count++;
 	}
-	str = malloc(sizeof(char) * (count - 2));
+	str = malloc(sizeof(char) * (count + 1));
 	if (str == NULL)
 		return (0);
 	ft_nbr_base_str(dec, base_to, &(*str));

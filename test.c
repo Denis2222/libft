@@ -129,9 +129,8 @@ int	main(int argc, char **argv)
 	tab = ft_split_whitespaces(str);
 	ft_print_words_tables(tab);
 	ft_putstr("\n=============================\n");
-/*
 	ft_convert_base("56", "0123456789", "01");
-	*/
+	ft_putstr("\n=============================\n");
 	//char **wab;
 	ft_split(argv[1], argv[2]);
 	//ft_print_words_tables(wab);
