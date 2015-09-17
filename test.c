@@ -128,8 +128,12 @@ int	main(int argc, char **argv)
 	str = ft_concat_params(argc, argv);	
 	tab = ft_split_whitespaces(str);
 	ft_print_words_tables(tab);
-	
-
-	ft_convert_base("10", "01", "0123456789");
+	ft_putstr("\n=============================\n");
+/*
+	ft_convert_base("56", "0123456789", "01");
+	*/
+	//char **wab;
+	ft_split(argv[1], argv[2]);
+	//ft_print_words_tables(wab);
 	return (0);
 }

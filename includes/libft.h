@@ -49,3 +49,4 @@ char	*ft_concat_params(int argc, char **argv);
 char	**ft_split_whitespaces(char *str);
 void	ft_print_words_tables(char **tab);
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
+void ft_split(char *str, char *charset);
