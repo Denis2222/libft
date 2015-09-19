@@ -46,12 +46,6 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 	{
 		if(ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
 		{
-			//printf(" word: [%d] (%d)  ", word, (c-lword));
-			if (word == nword)
-			{
-				strword = malloc(sizeof(char *) * (lword + 1));
-				return (ft_strncpy(strword, &str[c-(lword)],lword));
-			}
 			nb++;
 			c += ft_strlen(charset);
 			lword = 0;
@@ -63,6 +57,12 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 			lword++;
 			c++;
 		}
+		if ((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0) || str[c] == '\0' )
+			if (word == nword)
+			{
+				strword = malloc(sizeof(char *) * (lword + 1));
+				return (ft_strncpy(strword, &str[c-(lword)], lword));
+			}
 	}
 	return (str);
 }
@@ -73,18 +73,15 @@ char **ft_split(char *str, char *charset)
 	int	nbword;
 	int i;
 
-	printf("-->%s<--", ft_strdup(ft_split_get_word(str, charset, 1)));
-
 	nbword = ft_split_count_words(str, charset);
 	tab = malloc(sizeof(char *) * (nbword + 1));
 	i = 0;
 	while (i < nbword)
 	{
-		tab[i] = ft_strdup(ft_split_get_word(str, charset, i));
-		ft_putstr(tab[i]);
-		ft_putstr("\n");
+		tab[i] = ft_strdup(ft_split_get_word(str, charset, i + 1));
 		i++;
 	}
-	printf("nb mots: %d", nbword);
+	tab[i] = malloc(sizeof(char) * 1);
+	tab[i][0] = '\0';
 	return (tab);
 }
