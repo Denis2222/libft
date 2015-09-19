@@ -3,19 +3,16 @@
 int		ft_split_count_words(char *str, char *charset)
 {
 	int	c;
-	int nb;
 	int word;
 	int lword;
 
 	c = 0;
-	nb = 0;
 	word = 0;
 	lword = 0;
 	while (str[c] != '\0')
 	{
 		if(ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
 		{
-			nb++;
 			c += ft_strlen(charset);
 			lword = 0;
 		}
@@ -33,20 +30,17 @@ int		ft_split_count_words(char *str, char *charset)
 char	*ft_split_get_word(char *str, char *charset, int nword)
 {
 	int	c;
-	int nb;
 	int	word;
 	int lword;
 	char *strword;
 
 	c = 0;
-	nb = 0;
 	word = 0;
 	lword = 0;
 	while (str[c] != '\0')
 	{
 		if(ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
 		{
-			nb++;
 			c += ft_strlen(charset);
 			lword = 0;
 		}
