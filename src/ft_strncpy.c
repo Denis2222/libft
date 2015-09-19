@@ -15,7 +15,6 @@ char	*ft_strncpy(char *dest, const char *src, size_t n)
 	{
 		while (pos < n)
 		{
-			printf("w");
 			dest[pos] = '\0';
 			pos++;
 		}
