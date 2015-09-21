@@ -11,14 +11,14 @@ int		ft_split_count_words(char *str, char *charset)
 	lword = 0;
 	while (str[c] != '\0')
 	{
-		if(ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
+		if (ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
 		{
 			c += ft_strlen(charset);
 			lword = 0;
 		}
 		else
 		{
-			if(!lword)
+			if (!lword)
 				word++;
 			lword++;
 			c++;
@@ -39,26 +39,26 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 	lword = 0;
 	while (str[c] != '\0')
 	{
-		if(ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
+		if (ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
 		{
 			c += ft_strlen(charset);
 			lword = 0;
 		}
 		else
 		{
-			if(!lword)
+			if (!lword)
 				word++;
 			lword++;
 			c++;
 		}
-		if ((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0) || str[c] == '\0' )
+		if ((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0) || str[c] == '\0')
 			if (word == nword)
 			{
 				strword = malloc(sizeof(char *) * (lword + 1));
 				return (ft_strncpy(strword, &str[c-(lword)], lword));
 			}
 	}
-	return (str);
+	return (0);
 }
 
 char **ft_split(char *str, char *charset)
