@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>//malloc
 
+typedef struct		s_list
+{
+	struct s_list	*next;
+	void			*data;
+} t_list;
+
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nbr);
@@ -41,11 +47,17 @@ char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t nb);
 size_t	ft_strlcat(char *dest, const char *src, size_t nb);
+
 char	*ft_strdup(char *src);
 int		*ft_range(int min, int max);
 int		ft_ultimate_range(int **range, int min, int max);
+
 char	*ft_concat_params(int argc, char **argv);
 char	**ft_split_whitespaces(char *str);
 void	ft_print_words_tables(char **tab);
 char	*ft_convert_base(char *nbr, char *base_from, char *base_to);
-void 	ft_split(char *str, char *charset);
+char	**ft_split(char *str, char *charset);
+
+t_list	*ft_create_elem(void *data);
+void	ft_print_list(t_list *elem);
+void	ft_list_push_back(t_list **begin_list, void *data);
