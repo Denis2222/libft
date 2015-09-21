@@ -3,7 +3,6 @@
 int	main(void)
 {
 	t_list	*elem;
-	char str[10];
 
 	elem = ft_create_elem("1er Wagon");
 	ft_list_push_back(&elem, "2eme wagon");

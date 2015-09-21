@@ -18,12 +18,12 @@ void	ft_print_list(t_list *elem)
 	t_list *list;
 
 	list = elem;
-	printf("<=I==[%s]:", list->data);
+	printf("<=I==[%s]:", (char *)list->data);
 		while (list->next)
 	{
 		list = list->next;
 		if(list->data != NULL)
-			printf("[[%s]]:",list->data);
+			printf("[[%s]]:",(char *)list->data);
 	}
 }
 
