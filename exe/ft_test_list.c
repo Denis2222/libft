@@ -10,9 +10,7 @@ int	main(void)
 	ft_list_push_back(&elem, "4eme wagon");
 	ft_list_push_back(&elem, "5eme wagon");
 	ft_list_push_back(&elem, "6eme wagon");
-
 	ft_list_push_front(&elem, "loco");
 	ft_print_list(elem);
-	//ft_putstr("Toto create");
 	return (0);
 }
