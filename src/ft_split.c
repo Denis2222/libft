@@ -1,10 +1,22 @@
+/*******************************************************************************/
+/* */
+/* ::: :::::::: */
+/* filename_____________________________.ext :+: :+: :+: */
+/* +:+ +:+ +:+ */
+/* by: login____ <login____@student.42.fr> +#+ +:+ +#+ */
+/* +#+#+#+#+#+ +#+ */
+/* Created: yyyy/mm/dd hh:mm:ss by login____ #+# #+# */
+/* Updated: yyyy/mm/dd hh:mm:ss by login____ ### ########.fr */
+/* */
+/*******************************************************************************/
+
 #include <libft.h>
 
 int		ft_split_count_words(char *str, char *charset)
 {
 	int	c;
-	int word;
-	int lword;
+	int	word;
+	int	lword;
 
 	c = 0;
 	word = 0;
@@ -24,15 +36,23 @@ int		ft_split_count_words(char *str, char *charset)
 			c++;
 		}
 	}
-	return (word);	
+	return (word);
+}
+
+void	ft_split_new_word(int *lword, int *word, int *c)
+{
+	if (!*lword)
+		(*word)++;
+	(*lword)++;
+	(*c)++;
 }
 
 char	*ft_split_get_word(char *str, char *charset, int nword)
 {
-	int	c;
-	int	word;
-	int lword;
-	char *strword;
+	int		c;
+	int		word;
+	int		lword;
+	char	*strword;
 
 	c = 0;
 	word = 0;
@@ -45,17 +65,13 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 			lword = 0;
 		}
 		else
-		{
-			if (!lword)
-				word++;
-			lword++;
-			c++;
-		}
-		if ((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0) || str[c] == '\0')
-			if (word == nword)
+			ft_split_new_word(&lword, &word, &c);
+		if (((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
+			|| str[c] == '\0')
+			&& word == nword)
 			{
 				strword = malloc(sizeof(char *) * (lword + 1));
-				return (ft_strncpy(strword, &str[c-(lword)], lword));
+				return (ft_strncpy(strword, &str[c - (lword)], lword));
 			}
 	}
 	return (0);
@@ -63,9 +79,9 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 
 char **ft_split(char *str, char *charset)
 {
-	char **tab;
-	int	nbword;
-	int i;
+	char	**tab;
+	int		nbword;
+	int		i;
 
 	nbword = ft_split_count_words(str, charset);
 	tab = malloc(sizeof(char *) * (nbword + 1));
