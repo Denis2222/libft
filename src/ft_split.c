@@ -67,14 +67,13 @@ char	*ft_split_get_word(char *str, char *charset, int nword)
 		else
 			ft_split_new_word(&lword, &word, &c);
 		if (((ft_strncmp(&str[c], charset, ft_strlen(charset)) == 0)
-			|| str[c] == '\0')
-			&& word == nword)
+			|| str[c] == '\0') && word == nword)
 			{
 				strword = malloc(sizeof(char *) * (lword + 1));
 				return (ft_strncpy(strword, &str[c - (lword)], lword));
 			}
 	}
-	return (0);
+	return (NULL);
 }
 
 char **ft_split(char *str, char *charset)
