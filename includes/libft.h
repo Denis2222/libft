@@ -8,6 +8,14 @@ typedef struct		s_list
 	void			*data;
 } t_list;
 
+typedef struct	s_stock_par
+{
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}				t_stock_par;
+
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnbr(int nbr);
@@ -62,3 +70,6 @@ t_list	*ft_create_elem(void *data);
 void	ft_print_list(t_list *elem);
 void	ft_list_push_back(t_list **begin_list, void *data);
 void	ft_list_push_front(t_list **begin_list, void *data);
+
+struct s_stock_par	*ft_param_to_tab(int ac, char **av);
+void				ft_show_tab(struct s_stock_par *par);
