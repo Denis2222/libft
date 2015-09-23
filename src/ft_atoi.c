@@ -1,5 +1,10 @@
 #include <libft.h>
 
+int	ft_atoi_white_allow(char c)
+{
+	return ( c == ' ' || c == '\n' || c == '\t');
+}
+
 int	ft_atoi(const char *str)
 {
 	int nb;
@@ -11,16 +16,15 @@ int	ft_atoi(const char *str)
 	nb = 0;
 	length = ft_strlen((char *)str);
 	positive = 1;
-	while (str[pos] == ' ')
+	while (ft_atoi_white_allow(str[pos]))
 		pos++;
 
-	if (str[pos] == '-')
+	if (str[pos] == '-' || str[pos] == '+')
 	{
-		positive = - 1;
+		if (str[pos] == '-')
+			positive = - 1;
 		pos++;
 	}
-	if (str[pos] == '+')
-		pos++;
 	while (pos < length)
 	{
 		if (!ft_isdigit(str[pos]))
