@@ -2,7 +2,7 @@
 
 int	ft_atoi_white_allow(char c)
 {
-	return ( c == ' ' || c == '\n' || c == '\t');
+	return (c == ' ' || c == '\n' || c == '\t' || c == '\v');
 }
 
 int	ft_atoi(const char *str)
@@ -18,7 +18,6 @@ int	ft_atoi(const char *str)
 	positive = 1;
 	while (ft_atoi_white_allow(str[pos]))
 		pos++;
-
 	if (str[pos] == '-' || str[pos] == '+')
 	{
 		if (str[pos] == '-')
