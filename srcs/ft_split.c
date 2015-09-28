@@ -1,5 +1,3 @@
-/*******************************************************************************/
-
 #include <libft.h>
 
 int		ft_split_count_words(char *str, char *charset)

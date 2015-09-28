@@ -7,7 +7,7 @@ char	*ft_strcapitalize(char *str)
 
 	x = 0;
 	w = 0;
-	while(str[x] != '\0')
+	while (str[x] != '\0')
 	{
 		if (ft_isalnum(str[x]))
 		{

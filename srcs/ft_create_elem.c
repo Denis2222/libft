@@ -1,4 +1,5 @@
 #include <libft.h>
+
 struct s_list	*ft_create_elem(void *data)
 {
 	struct s_list *list;

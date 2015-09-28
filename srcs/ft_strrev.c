@@ -17,7 +17,7 @@ char *ft_strrev(char *str)
 	debut = 0;
 	length = ft_strlen(str);
 	fin = length - 1;
-	while(debut < fin)
+	while (debut < fin)
 	{
 		ft_cswap(&str[debut], &str[fin]);
 		debut++;

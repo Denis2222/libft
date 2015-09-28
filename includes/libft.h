@@ -74,3 +74,4 @@ void	ft_list_push_front(t_list **begin_list, void *data);
 struct s_stock_par	*ft_param_to_tab(int ac, char **av);
 void				ft_show_tab(struct s_stock_par *par);
 void				ft_foreach(int *tab, int length, void(*f)(int));
+int					*ft_map(int *tab, int length, int(*f)(int));
