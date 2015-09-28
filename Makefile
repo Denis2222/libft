@@ -54,11 +54,18 @@ OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo 'Link [$@]<- $^ '
 	@$(AR) $@ $^
 	@ranlib $@
+	@clear
+	@echo 'Link [$@]<- $^ '
 	
 $(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
+	@mkdir -p $(OBJDIR)
 	@echo 'Generate $@ : $^ '
 	@$(CC) $(HPATH) -o $@ -c $^
 
+clean:
+	@$(RM) $(OBJDIR)
+
+fclean: clean
+	@$(RM) $(LIBA)
