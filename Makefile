@@ -37,7 +37,10 @@ SRCS = ft_putchar.c \
 	   ft_atoi.c \
 	   ft_atoi_base.c \
 	   ft_foreach.c \
-	   ft_map.c
+	   ft_map.c \
+	   ft_any.c \
+	   ft_count_if.c \
+	   ft_is_sort.c
 
 LIBA = libft.a
 NAME = $(LIBA)
@@ -69,3 +72,5 @@ clean:
 
 fclean: clean
 	@$(RM) $(LIBA)
+
+re: fclean all
