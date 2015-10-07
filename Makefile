@@ -74,3 +74,6 @@ fclean: clean
 	@$(RM) $(LIBA)
 
 re: fclean all
+
+test:
+	echo $(TESTNAME)
