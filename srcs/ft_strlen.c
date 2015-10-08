@@ -3,6 +3,7 @@
 int ft_strlen(char *str)
 {
 	int l;
+
 	l = 0;
 	while (*str)
 	{
@@ -10,5 +11,5 @@ int ft_strlen(char *str)
 		l++;
 	}
 
-	return l;
+	return (l);
 }
