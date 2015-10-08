@@ -9,10 +9,10 @@ char	*ft_strncat(char *dest, const char *src, size_t nb)
 	y = 0;
 	while (src[y] && y < (int)nb)
 	{
-		dest[x+y] = src[y];
+		dest[x + y] = src[y];
 		y++;
 	}
-	dest[x+y] = '\0';
+	dest[x + y] = '\0';
 	return (dest);
 }
 
