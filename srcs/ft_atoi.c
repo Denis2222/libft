@@ -2,13 +2,13 @@
 
 int	ft_atoi_white_allow(char c)
 {
-	return (c == ' ' || c == '\n' || c == '\t' || c == '\v');
+	return (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\r' || c == '\f');
 }
 
 
 int	ft_atoi(const char *str)
 {
-	int nb;
+	long int nb;
 	int	length;
 	int	pos;
 	int positive;
