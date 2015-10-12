@@ -5,6 +5,8 @@ char	*ft_strstr(char *str, const char *to_find)
 	int	pos;
 	int x;
 
+	if (ft_strlen((char *)to_find) == 0)
+		return (str);
 	pos = 0;
 	x = 0;
 	while (str[pos] != '\0')
