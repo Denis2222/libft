@@ -43,6 +43,7 @@
 #include <time.h>
 #include <unistd.h>
 #include <signal.h>
+#include <limits.h>
 
 #include <libft.h> /* compile with -I./ */
 
@@ -128,6 +129,23 @@ int					main(void)
 	int				status;
 	pid_t			pid;
 
+   printf("The number of bits in a byte %d\n", CHAR_BIT);
+
+   printf("The minimum value of SIGNED CHAR = %d\n", SCHAR_MIN);
+   printf("The maximum value of SIGNED CHAR = %d\n", SCHAR_MAX);
+   printf("The maximum value of UNSIGNED CHAR = %d\n", UCHAR_MAX);
+
+   printf("The minimum value of SHORT INT = %d\n", SHRT_MIN);
+   printf("The maximum value of SHORT INT = %d\n", SHRT_MAX); 
+
+   printf("The minimum value of INT = %d\n", INT_MIN);
+   printf("The maximum value of INT = %d\n", INT_MAX);
+
+   printf("The minimum value of CHAR = %d\n", CHAR_MIN);
+   printf("The maximum value of CHAR = %d\n", CHAR_MAX);
+
+   printf("The minimum value of LONG = %ld\n", LONG_MIN);
+   printf("The maximum value of LONG = %ld\n", LONG_MAX);
 	srand(time(NULL));
 	printf("[\033[33mYellow Tests\033[0m] are Hardcore\n");
 	i = 0;
@@ -166,6 +184,10 @@ int					main(void)
 	D_ADD_TEST(strcmp);
 #define	D_STRNCMP
 	D_ADD_TEST(strncmp);
+#define	D_ATOI
+	D_ADD_HCTEST(atoi);
+#define	D_ISASCII
+	D_ADD_HCTEST(isascii);
 #define	D_ISALPHA
 	D_ADD_HCTEST(isalpha);
 #define	D_ISDIGIT
@@ -174,8 +196,6 @@ int					main(void)
 	D_ADD_HCTEST(isalnum);
 #define	D_ISPRINT
 	D_ADD_HCTEST(isprint);
-#define	D_ATOI
-	D_ADD_HCTEST(atoi);
 /*
 #define	D_MEMMOVE
 	D_ADD_HCTEST(memmove);
@@ -191,8 +211,6 @@ int					main(void)
 	D_ADD_TEST(strchr);
 #define	D_STRRCHR
 	D_ADD_TEST(strrchr);
-#define	D_ISASCII
-	D_ADD_HCTEST(isascii);
 #define	D_TOUPPER
 	D_ADD_HCTEST(toupper);
 #define	D_TOLOWER
@@ -1047,7 +1065,7 @@ int				uf_test_isprint(void)
 	i = -300;
 	while (i < 300)
 	{
-		if (isprint(i) != ft_isprint(i))
+		if ((bool)isprint(i) != (bool)ft_isprint(i) && ft_isascii(i))
 			D_ERROR
 		i = i + 1;
 	}
@@ -1064,7 +1082,10 @@ int				uf_test_isascii(void)
 	while (i < 300)
 	{
 		if (isascii(i) != ft_isascii(i))
+		{
+			//printf("\n%d : %d : %d", isascii(i), ft_isascii(i), i);
 			D_ERROR
+		}
 		i = i + 1;
 	}
 	return (1);
@@ -1079,7 +1100,7 @@ int				uf_test_isalnum(void)
 	i = -300;
 	while (i < 300)
 	{
-		if (isalnum(i) != ft_isalnum(i))
+		if ((bool)isalnum(i) != (bool)ft_isalnum(i) && ft_isascii(i))
 			D_ERROR
 		i = i + 1;
 	}
@@ -1095,8 +1116,11 @@ int				uf_test_isdigit(void)
 	i = -300;
 	while (i < 300)
 	{
-		if (isdigit(i) != ft_isdigit(i))
+		if ((bool)isdigit(i) != (bool)ft_isdigit(i) && ft_isascii(i))
+		{
+			printf("\n%d [%c] %d %d", i, i, isdigit(i), ft_isdigit(i));
 			D_ERROR
+		}
 		i = i + 1;
 	}
 	return (1);
@@ -1111,8 +1135,13 @@ int				uf_test_isalpha(void)
 	i = -300;
 	while (i < 300)
 	{
-		if (isalpha(i) != ft_isalpha(i))
+		
+		if ((bool)isalpha(i) != (bool)ft_isalpha(i) && isascii(i))
+		{
+			printf(" \n%d : %d : %d ", i, isalpha(i), ft_isalpha(i));
+		//	printf("#");
 			D_ERROR
+		}
 		i = i + 1;
 	}
 	return (1);
