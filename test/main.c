@@ -43,7 +43,6 @@
 #include <time.h>
 #include <unistd.h>
 #include <signal.h>
-#include <limits.h>
 
 #include <libft.h> /* compile with -I./ */
 
@@ -129,23 +128,6 @@ int					main(void)
 	int				status;
 	pid_t			pid;
 
-   printf("The number of bits in a byte %d\n", CHAR_BIT);
-
-   printf("The minimum value of SIGNED CHAR = %d\n", SCHAR_MIN);
-   printf("The maximum value of SIGNED CHAR = %d\n", SCHAR_MAX);
-   printf("The maximum value of UNSIGNED CHAR = %d\n", UCHAR_MAX);
-
-   printf("The minimum value of SHORT INT = %d\n", SHRT_MIN);
-   printf("The maximum value of SHORT INT = %d\n", SHRT_MAX); 
-
-   printf("The minimum value of INT = %d\n", INT_MIN);
-   printf("The maximum value of INT = %d\n", INT_MAX);
-
-   printf("The minimum value of CHAR = %d\n", CHAR_MIN);
-   printf("The maximum value of CHAR = %d\n", CHAR_MAX);
-
-   printf("The minimum value of LONG = %ld\n", LONG_MIN);
-   printf("The maximum value of LONG = %ld\n", LONG_MAX);
 	srand(time(NULL));
 	printf("[\033[33mYellow Tests\033[0m] are Hardcore\n");
 	i = 0;
@@ -196,13 +178,13 @@ int					main(void)
 	D_ADD_HCTEST(isalnum);
 #define	D_ISPRINT
 	D_ADD_HCTEST(isprint);
-/*
-#define	D_MEMMOVE
-	D_ADD_HCTEST(memmove);
-#define	D_MEMCHR
-	D_ADD_HCTEST(memchr);
 #define	D_MEMCMP
 	D_ADD_HCTEST(memcmp);
+#define	D_MEMMOVE
+	D_ADD_HCTEST(memmove);
+/*
+#define	D_MEMCHR
+	D_ADD_HCTEST(memchr);
 #define	D_STRLCAT
 	D_ADD_TEST(strlcat);
 #define	D_STRNSTR
@@ -1135,10 +1117,10 @@ int				uf_test_isalpha(void)
 	i = -300;
 	while (i < 300)
 	{
-		
+		//printf(" \n%d : %d : %d -> %c", i, isalpha(i), ft_isalpha(i), i);
 		if ((bool)isalpha(i) != (bool)ft_isalpha(i) && isascii(i))
 		{
-			printf(" \n%d : %d : %d ", i, isalpha(i), ft_isalpha(i));
+			
 		//	printf("#");
 			D_ERROR
 		}
@@ -1725,6 +1707,7 @@ int				uf_test_memcmp(void)
 		memcpy(itab2, itab, sizeof(itab));
         if (memcmp(itab, itab2, sizeof(itab)) != ft_memcmp(itab, itab2, sizeof(itab)))
             D_ERROR
+        //printf("\nltab:%s \nltab2:%s \nsizeltab:%d \n############################################\n", ltab, ltab2, sizeof(ltab));
 		if (memcmp(ltab, ltab2, sizeof(ltab)) != ft_memcmp(ltab, ltab2, sizeof(ltab)))
             D_ERROR
 		memcpy(ltab2, ltab, sizeof(ltab));

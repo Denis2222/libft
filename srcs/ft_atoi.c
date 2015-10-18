@@ -5,10 +5,22 @@ int	ft_atoi_white_allow(char c)
 	return (c == ' ' || c == '\n' || c == '\t' || c == '\v' || c == '\r' || c == '\f');
 }
 
+long long ft_atoi_int_overflow(const char *str, int pos, long int nb)
+{
+	long long int result;
+	long long int_max = 2147483647;
+	
+	if ( (nb > int_max/10) )
+	{
+		return (int_max);
+	}
+	result = (nb * 10) + (str[pos] - '0');
+	return (result);
+}
 
 int	ft_atoi(const char *str)
 {
-	long int nb;
+	long long nb;
 	int	length;
 	int	pos;
 	int positive;
@@ -29,7 +41,8 @@ int	ft_atoi(const char *str)
 	{
 		if (!ft_isdigit(str[pos]))
 			return (nb * positive);
-		nb = (nb * 10) + (str[pos++] - '0');
+		nb = ft_atoi_int_overflow(str, pos, nb);
+		pos++;
 	}
 	return (nb * positive);
 }
