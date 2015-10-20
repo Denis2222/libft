@@ -182,13 +182,13 @@ int					main(void)
 	D_ADD_HCTEST(memcmp);
 #define	D_MEMMOVE
 	D_ADD_HCTEST(memmove);
+#define	D_STRNSTR
+	D_ADD_TEST(strnstr);
 /*
 #define	D_MEMCHR
 	D_ADD_HCTEST(memchr);
 #define	D_STRLCAT
 	D_ADD_TEST(strlcat);
-#define	D_STRNSTR
-	D_ADD_TEST(strnstr);
 #define	D_STRCHR
 	D_ADD_TEST(strchr);
 #define	D_STRRCHR
