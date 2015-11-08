@@ -2,7 +2,7 @@
 
 char	*ft_strnstr(char *str, const char *to_find, size_t n)
 {
-	int		pos;
+	size_t	pos;
 	int 	x;
 	size_t	length;
 
@@ -16,8 +16,6 @@ char	*ft_strnstr(char *str, const char *to_find, size_t n)
 		if (str[pos] == to_find[x++])
 		{
 			length++;
-			if (length >= n)
-				return (&str[pos - x + 1]);
 			if (to_find[x] == '\0')
 				return (&str[pos - x + 1]);
 		}
@@ -26,6 +24,8 @@ char	*ft_strnstr(char *str, const char *to_find, size_t n)
 			x = 0;
 			length = 0;
 		}
+		if (pos >= n)
+			return (NULL);
 		pos++;
 	}
 	return (0);

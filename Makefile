@@ -25,7 +25,9 @@ SRCS = ft_putchar.c \
 	   ft_memccpy.c \
 	   ft_memcmp.c \
 	   ft_memmove.c \
-	   ft_strnstr.c
+	   ft_strnstr.c \
+	   ft_memchr.c \
+	   ft_strchr.c
 
 LIBA = libft.a
 NAME = $(LIBA)
@@ -60,5 +62,6 @@ fclean: clean
 
 re: fclean all
 
-test:
-	echo $(TESTNAME)
+test: all
+	gcc -L. ./test/main.c -lft -Iincludes
+	./a.out

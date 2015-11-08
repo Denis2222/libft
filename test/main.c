@@ -184,13 +184,13 @@ int					main(void)
 	D_ADD_HCTEST(memmove);
 #define	D_STRNSTR
 	D_ADD_TEST(strnstr);
-/*
 #define	D_MEMCHR
 	D_ADD_HCTEST(memchr);
-#define	D_STRLCAT
-	D_ADD_TEST(strlcat);
 #define	D_STRCHR
 	D_ADD_TEST(strchr);
+/*
+#define	D_STRLCAT
+	D_ADD_TEST(strlcat);
 #define	D_STRRCHR
 	D_ADD_TEST(strrchr);
 #define	D_TOUPPER
@@ -1297,7 +1297,6 @@ int				uf_test_strcmp(void)
 int				uf_test_strnstr(void)
 {
 	char		*str = "Hello les genw";
-
 
 	if (strnstr(str, "Hello", 6) != ft_strnstr(str, "Hello", 6))
 		D_ERROR;
