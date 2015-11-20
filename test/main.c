@@ -188,11 +188,11 @@ int					main(void)
 	D_ADD_HCTEST(memchr);
 #define	D_STRCHR
 	D_ADD_TEST(strchr);
+#define	D_STRRCHR
+	D_ADD_TEST(strrchr);
 /*
 #define	D_STRLCAT
 	D_ADD_TEST(strlcat);
-#define	D_STRRCHR
-	D_ADD_TEST(strrchr);
 #define	D_TOUPPER
 	D_ADD_HCTEST(toupper);
 #define	D_TOLOWER
