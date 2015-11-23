@@ -28,7 +28,10 @@ SRCS = ft_putchar.c \
 	   ft_strnstr.c \
 	   ft_memchr.c \
 	   ft_strchr.c \
-	   ft_strrchr.c
+	   ft_strrchr.c \
+	   ft_strlcat.c \
+	   ft_tolower.c \
+	   ft_toupper.c
 
 LIBA = libft.a
 NAME = $(LIBA)
