@@ -6,11 +6,17 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 13:44:19 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/23 15:01:17 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/24 16:28:10 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 int		ft_tolower(int c)
 {
+	if (ft_isalpha(c) && c > 64 && c < 91)
+	{
+		return (c + 32);
+	}
 	return (c);
 }
