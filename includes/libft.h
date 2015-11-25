@@ -1,6 +1,6 @@
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //PART 1
 int		ft_atoi(const char *str);

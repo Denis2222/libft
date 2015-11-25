@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:30:35 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/23 12:42:06 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/25 16:30:13 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(char *src)
 
 	str = malloc(sizeof(char) * (ft_strlen(src) + 1));
 	if (!str)
-		return (0);
+		return (NULL);
 	ft_strcpy(str, src);
 	return (str);
 }

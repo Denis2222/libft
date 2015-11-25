@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/11/24 18:37:26 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/25 17:34:57 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,7 +196,6 @@ int					main(void)
 	D_ADD_HCTEST(toupper);
 #define	D_TOLOWER
 	D_ADD_HCTEST(tolower);
-/*
 #define	D_MEMALLOC_AND_DEL
 	D_ADD_TEST(memalloc_and_del);
 #define	D_STRNEW
@@ -227,6 +226,7 @@ int					main(void)
 	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
+/*
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
 #define	D_LSTDELONE
@@ -238,7 +238,8 @@ int					main(void)
 #define	D_LSTITER
 	D_ADD_TEST(lstiter);
 #define D_LSTMAP
-	D_ADD_TEST(lstmap);*/
+	D_ADD_TEST(lstmap);
+*/
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);

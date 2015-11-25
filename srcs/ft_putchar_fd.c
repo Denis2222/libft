@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:51:12 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 17:44:27 by dmoureu-         ###   ########.fr       */
+/*   Created: 2015/11/25 15:58:58 by dmoureu-          #+#    #+#             */
+/*   Updated: 2015/11/25 16:05:15 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <libft.h>
+#include <unistd.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*str;
-	int		length;
-
-	length = (ft_strlen((char*)s1) + ft_strlen((char*)s2));
-	str = (char *)malloc(sizeof(char) * length + 1);
-	if (!str)
-		return (NULL);
-	str = ft_strcpy(str, (char *)s1);
-	str = ft_strcat(str, (char *)s2);
-	return (str);
+	write(fd, &c, 1);
 }

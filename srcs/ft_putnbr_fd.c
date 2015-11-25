@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:51:12 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 17:44:27 by dmoureu-         ###   ########.fr       */
+/*   Created: 2015/11/25 16:16:54 by dmoureu-          #+#    #+#             */
+/*   Updated: 2015/11/25 16:25:59 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	int		length;
-
-	length = (ft_strlen((char*)s1) + ft_strlen((char*)s2));
-	str = (char *)malloc(sizeof(char) * length + 1);
-	if (!str)
-		return (NULL);
-	str = ft_strcpy(str, (char *)s1);
-	str = ft_strcat(str, (char *)s2);
-	return (str);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+	{
+		ft_putchar_fd('0' + n, fd);
+	}
 }

@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:51:12 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 17:44:27 by dmoureu-         ###   ########.fr       */
+/*   Created: 2015/11/25 15:52:30 by dmoureu-          #+#    #+#             */
+/*   Updated: 2015/11/25 19:59:10 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <libft.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_itoa(int n)
 {
-	char	*str;
 	int		length;
+	int		a;
+	int		neg;
+	char	*str;
 
-	length = (ft_strlen((char*)s1) + ft_strlen((char*)s2));
-	str = (char *)malloc(sizeof(char) * length + 1);
-	if (!str)
-		return (NULL);
-	str = ft_strcpy(str, (char *)s1);
-	str = ft_strcat(str, (char *)s2);
-	return (str);
+	neg = 0;
+	if (n < 0)
+		neg = 1;
+	a = n;
+	length = 1;
+	while (a > 9)
+	{
+		a = a / 10;
+		length++;
+	}
+	str = (char*)ft_memalloc(length + neg);
+	ft_putnbr(length);
+
+	return (ft_strdup("TOTO"));
 }

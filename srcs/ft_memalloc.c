@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:06:14 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/24 19:19:47 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/25 14:28:22 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memalloc(size_t size)
 	char *mem;
 
 	mem = malloc(sizeof(char) * size);
-	if(!mem)
+	if (!mem)
 		return (NULL);
 	while (size-- > 0)
 	{
