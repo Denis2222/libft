@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/11/26 18:58:13 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 21:59:29 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,7 +228,7 @@ int					main(void)
 	D_ADD_TEST(strtrim);
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
-/*#define	D_LSTDELONE
+#define	D_LSTDELONE
 	D_ADD_TEST(lstdelone);
 #define	D_LSTDEL
 	D_ADD_TEST(lstdel);
@@ -238,7 +238,7 @@ int					main(void)
 	D_ADD_TEST(lstiter);
 #define D_LSTMAP
 	D_ADD_TEST(lstmap);
-*/
+
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);
@@ -1669,7 +1669,7 @@ int				uf_test_memcmp(void)
 		D_ERROR
 #endif
     i = 0;
-    while (i < 11)
+    while (i < 91)
     {
         j = 0;
         while (j < 11)
