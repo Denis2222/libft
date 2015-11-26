@@ -52,12 +52,13 @@ SRCS = ft_putchar.c \
 	   ft_putchar_fd.c \
 	   ft_putstr_fd.c \
 	   ft_putendl_fd.c \
-	   ft_putnbr_fd.c
+	   ft_putnbr_fd.c \
+	   ft_lstnew.c
 
 LIBA = libft.a
 NAME = $(LIBA)
 HPATH = -Iincludes
-GCC_FLAGS = -Wall -Werror -Wextra -g
+GCC_FLAGS = -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
 SRCDIR = srcs
 OBJDIR = objs
@@ -71,7 +72,6 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $@ $^
 	@ranlib $@
-	@clear
 	@echo 'Link [$@]<- $^ '
 
 $(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)

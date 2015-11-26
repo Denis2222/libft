@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:14:57 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 19:39:43 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 17:15:20 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ char	**ft_strsplit(char const *s, char c)
 	int		start;
 	int		length;
 
+	if (s == NULL)
+		return (NULL);
 	nbword = ft_strsplit_count(s, c);
 	tab = malloc(sizeof(char*) * (nbword + 1));
 	i = 0;

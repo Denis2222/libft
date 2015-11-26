@@ -1,5 +1,6 @@
 #include <libft.h>
 #include <string.h>
+#include <stdio.h>
 
 int	main(void)
 {
@@ -15,12 +16,12 @@ int		ret2;
 	ft_strcpy(buf2, "abc");
 
 
-	ret = ft_strlcat(buf, "abcd", 2);
-	ret2 = strlcat(buf2, "a", 2);
+	ret = ft_strlcat(buf, "def", 15);
+	ret2 = strlcat(buf2, "def", 15);
 
 	ft_putstr(buf);
 	ft_putnbr(ret);
-
+	printf("\n");
 	ft_putstr(buf2);
 	ft_putnbr(ret2);
 }

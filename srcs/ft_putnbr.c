@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:25:09 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/23 12:38:43 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 14:28:01 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,5 @@
 
 void	ft_putnbr(int nbr)
 {
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-	}
-	if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-	{
-		ft_putchar('0' + nbr);
-	}
+	ft_putstr(ft_itoa(nbr));
 }

@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 21:14:15 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 19:38:42 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 17:27:12 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s)
 	unsigned int	start;
 	unsigned int	end;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	length = ft_strlen(s);
 	start = 0;

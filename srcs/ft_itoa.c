@@ -6,31 +6,57 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:52:30 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 19:59:10 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 17:22:43 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_itoa(int n)
+int		ft_itoa_sign(int n)
 {
-	int		length;
-	int		a;
-	int		neg;
-	char	*str;
+	if (n >= 0)
+		return (0);
+	return (1);
+}
 
-	neg = 0;
-	if (n < 0)
-		neg = 1;
-	a = n;
+int		ft_itoa_length(int n)
+{
+	int	length;
+
 	length = 1;
-	while (a > 9)
+	if (ft_itoa_sign(n))
+		n = n * -1;
+	while (n > 9)
 	{
-		a = a / 10;
+		n = n / 10;
 		length++;
 	}
-	str = (char*)ft_memalloc(length + neg);
-	ft_putnbr(length);
+	return (length);
+}
 
-	return (ft_strdup("TOTO"));
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		length;
+	int		abs;
+
+	if (n <= -2147483648)
+		return (ft_strdup("-2147483648"));
+	length = ft_itoa_length(n) + ft_itoa_sign(n);
+	abs = n;
+	if (ft_itoa_sign(n))
+		abs = n * -1;
+	str = (char*)ft_memalloc(length + 1);
+	if (!str)
+		return (NULL);
+	str[length] = '\0';
+	while (length > 0)
+	{
+		length--;
+		str[length] = (abs % 10) + 48;
+		abs = abs / 10;
+	}
+	if (ft_itoa_sign(n))
+		str[0] = '-';
+	return (str);
 }

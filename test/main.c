@@ -6,7 +6,7 @@
 /*   By: student@42 <@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 14:43:06 by student@42        #+#    #+#             */
-/*   Updated: 2015/11/25 17:34:57 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 18:58:13 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,20 @@ int					main(void)
  * // #define D_MEMSET
  * // D_ADD_TEST(...)
  */
+#define	D_MEMSET
+	D_ADD_HCTEST(memset);
+#define	D_BZERO
+	D_ADD_HCTEST(bzero);
+#define	D_MEMCPY
+	D_ADD_HCTEST(memcpy);
+#define	D_MEMCCPY
+	D_ADD_HCTEST(memccpy);
+#define	D_MEMMOVE
+	D_ADD_HCTEST(memmove);
+#define	D_MEMCHR
+	D_ADD_HCTEST(memchr);
+#define	D_MEMCMP
+	D_ADD_HCTEST(memcmp);
 #define	D_STRLEN
 	D_ADD_TEST(strlen);
 #define	D_STRDUP
@@ -152,46 +166,32 @@ int					main(void)
 	D_ADD_TEST(strcat);
 #define	D_STRNCAT
 	D_ADD_TEST(strncat);
-#define	D_MEMSET
-	D_ADD_HCTEST(memset);
-#define	D_BZERO
-	D_ADD_HCTEST(bzero);
-#define	D_MEMCPY
-	D_ADD_HCTEST(memcpy);
-#define	D_MEMCCPY
-	D_ADD_HCTEST(memccpy);
+#define	D_STRLCAT
+	D_ADD_TEST(strlcat);
+#define	D_STRCHR
+	D_ADD_TEST(strchr);
+#define	D_STRRCHR
+	D_ADD_TEST(strrchr);
 #define	D_STRSTR
 	D_ADD_TEST(strstr);
+#define	D_STRNSTR
+	D_ADD_TEST(strnstr);
 #define	D_STRCMP
 	D_ADD_TEST(strcmp);
 #define	D_STRNCMP
 	D_ADD_TEST(strncmp);
 #define	D_ATOI
 	D_ADD_HCTEST(atoi);
-#define	D_ISASCII
-	D_ADD_HCTEST(isascii);
 #define	D_ISALPHA
 	D_ADD_HCTEST(isalpha);
 #define	D_ISDIGIT
 	D_ADD_HCTEST(isdigit);
 #define	D_ISALNUM
 	D_ADD_HCTEST(isalnum);
+#define	D_ISASCII
+	D_ADD_HCTEST(isascii);
 #define	D_ISPRINT
 	D_ADD_HCTEST(isprint);
-#define	D_MEMCMP
-	D_ADD_HCTEST(memcmp);
-#define	D_MEMMOVE
-	D_ADD_HCTEST(memmove);
-#define	D_STRNSTR
-	D_ADD_TEST(strnstr);
-#define	D_MEMCHR
-	D_ADD_HCTEST(memchr);
-#define	D_STRCHR
-	D_ADD_TEST(strchr);
-#define	D_STRRCHR
-	D_ADD_TEST(strrchr);
-#define	D_STRLCAT
-	D_ADD_TEST(strlcat);
 #define	D_TOUPPER
 	D_ADD_HCTEST(toupper);
 #define	D_TOLOWER
@@ -226,10 +226,9 @@ int					main(void)
 	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
-/*
 #define	D_LSTNEW
 	D_ADD_TEST(lstnew);
-#define	D_LSTDELONE
+/*#define	D_LSTDELONE
 	D_ADD_TEST(lstdelone);
 #define	D_LSTDEL
 	D_ADD_TEST(lstdel);
@@ -1048,7 +1047,7 @@ int				uf_test_isprint(void)
 	i = -300;
 	while (i < 300)
 	{
-		if ((bool)isprint(i) != (bool)ft_isprint(i) && ft_isascii(i))
+		if (isprint(i) != ft_isprint(i))
 			D_ERROR
 		i = i + 1;
 	}
@@ -1065,10 +1064,7 @@ int				uf_test_isascii(void)
 	while (i < 300)
 	{
 		if (isascii(i) != ft_isascii(i))
-		{
-			//printf("\n%d : %d : %d", isascii(i), ft_isascii(i), i);
 			D_ERROR
-		}
 		i = i + 1;
 	}
 	return (1);
@@ -1083,7 +1079,7 @@ int				uf_test_isalnum(void)
 	i = -300;
 	while (i < 300)
 	{
-		if ((bool)isalnum(i) != (bool)ft_isalnum(i) && ft_isascii(i))
+		if (isalnum(i) != ft_isalnum(i))
 			D_ERROR
 		i = i + 1;
 	}
@@ -1099,11 +1095,8 @@ int				uf_test_isdigit(void)
 	i = -300;
 	while (i < 300)
 	{
-		if ((bool)isdigit(i) != (bool)ft_isdigit(i) && ft_isascii(i))
-		{
-			printf("\n%d [%c] %d %d", i, i, isdigit(i), ft_isdigit(i));
+		if (isdigit(i) != ft_isdigit(i))
 			D_ERROR
-		}
 		i = i + 1;
 	}
 	return (1);
@@ -1118,13 +1111,8 @@ int				uf_test_isalpha(void)
 	i = -300;
 	while (i < 300)
 	{
-		//printf(" \n%d : %d : %d -> %c", i, isalpha(i), ft_isalpha(i), i);
-		if ((bool)isalpha(i) != (bool)ft_isalpha(i) && isascii(i))
-		{
-			
-		//	printf("#");
+		if (isalpha(i) != ft_isalpha(i))
 			D_ERROR
-		}
 		i = i + 1;
 	}
 	return (1);
@@ -1173,12 +1161,8 @@ int				uf_test_atoi(void)
 			j++;
 		}
 		str[11] = 0;
-
 		if (atoi(str) != ft_atoi(str))
-		{
-			printf("\n %s : %d =? %d ", str, atoi(str), ft_atoi(str));
 			D_ERROR
-		}
 		i++;
 	}
 	return (1);
@@ -1298,6 +1282,7 @@ int				uf_test_strcmp(void)
 int				uf_test_strnstr(void)
 {
 	char		*str = "Hello les genw";
+
 
 	if (strnstr(str, "Hello", 6) != ft_strnstr(str, "Hello", 6))
 		D_ERROR;
@@ -1707,7 +1692,6 @@ int				uf_test_memcmp(void)
 		memcpy(itab2, itab, sizeof(itab));
         if (memcmp(itab, itab2, sizeof(itab)) != ft_memcmp(itab, itab2, sizeof(itab)))
             D_ERROR
-        //printf("\nltab:%s \nltab2:%s \nsizeltab:%d \n############################################\n", ltab, ltab2, sizeof(ltab));
 		if (memcmp(ltab, ltab2, sizeof(ltab)) != ft_memcmp(ltab, ltab2, sizeof(ltab)))
             D_ERROR
 		memcpy(ltab2, ltab, sizeof(ltab));
