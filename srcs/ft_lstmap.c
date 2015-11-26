@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 21:42:14 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 21:58:37 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/26 22:09:06 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*begin_list;
 
 	begin_list = NULL;
-	if (!lst || !f)
-		return (NULL);
 	while (lst)
 	{
 		if (!begin_list)
