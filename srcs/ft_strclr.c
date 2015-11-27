@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:35:43 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 15:12:19 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:32:25 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_strclr(char *s)
 	int	len;
 
 	if (s == NULL)
-		return;
+		return ;
 	len = ft_strlen(s);
 	while (len-- >= 0)
 		s[len] = '\0';

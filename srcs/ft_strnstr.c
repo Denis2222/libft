@@ -6,19 +6,19 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:31:24 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/25 14:25:41 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:45:14 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_strnstr_init(size_t *pos, int *x)
+static void	ft_strnstr_init(size_t *pos, int *x)
 {
 	pos = 0;
 	x = 0;
 }
 
-char	*ft_strnstr(char *str, const char *to_find, size_t n)
+char		*ft_strnstr(char *str, const char *to_find, size_t n)
 {
 	size_t	pos;
 	int		x;

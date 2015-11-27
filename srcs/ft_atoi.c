@@ -6,13 +6,13 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:26:47 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 18:24:31 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:40:19 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_atoi_white_allow(char c)
+static int	ft_atoi_white_allow(char c)
 {
 	return (c == ' '
 			|| c == '\n'
@@ -22,7 +22,7 @@ int	ft_atoi_white_allow(char c)
 			|| c == '\f');
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int	nb;
 	int	length;

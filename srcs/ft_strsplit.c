@@ -6,14 +6,14 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:14:57 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 17:15:20 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:45:46 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdio.h>
 
-int		ft_strsplit_count(char const *s, char c)
+static int		ft_strsplit_count(char const *s, char c)
 {
 	int	i;
 	int	d;
@@ -36,7 +36,7 @@ int		ft_strsplit_count(char const *s, char c)
 	return (word);
 }
 
-int		ft_strsplit_length(char const *s, char c, int cword)
+static int		ft_strsplit_length(char const *s, char c, int cword)
 {
 	int	i;
 	int	d;
@@ -63,7 +63,7 @@ int		ft_strsplit_length(char const *s, char c, int cword)
 	return (length);
 }
 
-int		ft_strsplit_start(char const *s, char c, int cword)
+static int		ft_strsplit_start(char const *s, char c, int cword)
 {
 	int	i;
 	int	d;
@@ -90,7 +90,7 @@ int		ft_strsplit_start(char const *s, char c, int cword)
 	return (length);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		nbword;

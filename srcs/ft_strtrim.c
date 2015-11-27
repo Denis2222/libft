@@ -6,14 +6,14 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 21:14:15 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 17:27:12 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:44:00 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <libft.h>
 
-int		istrimable(char c)
+static int		istrimable(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t')
 		return (1);
@@ -21,7 +21,7 @@ int		istrimable(char c)
 		return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	int				i;
 	int				length;

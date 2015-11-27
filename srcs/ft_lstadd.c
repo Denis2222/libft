@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 20:31:52 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 20:49:19 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:32:11 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_lstadd(t_list **alst, t_list *new)
 {
 	if (*alst == NULL)
-		return;
+		return ;
 	if (new == NULL)
-		return;
+		return ;
 	new->next = *alst;
 	*alst = new;
 }

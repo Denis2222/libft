@@ -6,20 +6,20 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 15:52:30 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/26 17:22:43 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:36:21 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_itoa_sign(int n)
+static int	ft_itoa_sign(int n)
 {
 	if (n >= 0)
 		return (0);
 	return (1);
 }
 
-int		ft_itoa_length(int n)
+static int	ft_itoa_length(int n)
 {
 	int	length;
 
@@ -34,7 +34,7 @@ int		ft_itoa_length(int n)
 	return (length);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	char	*str;
 	int		length;
