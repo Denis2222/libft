@@ -12,12 +12,6 @@
 
 #include <libft.h>
 
-static void	ft_strnstr_init(size_t *pos, int *x)
-{
-	pos = 0;
-	x = 0;
-}
-
 char		*ft_strnstr(char *str, const char *to_find, size_t n)
 {
 	size_t	pos;
