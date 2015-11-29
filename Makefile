@@ -77,11 +77,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $@ $^
 	@ranlib $@
-	@echo 'Link [$@]<- $^ '
+	@echo 'Link [$@]'
 
 $(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
 	@mkdir -p $(OBJDIR)
-	@echo 'Generate $@ : $^ '
 	@$(CC) $(HPATH) -o $@ -c $^
 
 clean:
