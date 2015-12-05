@@ -67,7 +67,7 @@ SRCS = ft_putchar.c \
 
 LIBA = libft.a
 NAME = $(LIBA)
-HPATH = -I.
+HPATH = -Iincludes
 GCC_FLAGS = -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
 SRCDIR = ./
