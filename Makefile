@@ -18,6 +18,10 @@ SRCS = ft_putchar.c \
 	   ft_isalpha.c \
 	   ft_isalnum.c \
 	   ft_isascii.c \
+	   ft_isupper.c \
+	   ft_islower.c \
+	   ft_isblank.c \
+	   ft_isspace.c \
 	   ft_atoi.c \
 	   ft_memset.c \
 	   ft_bzero.c \
@@ -58,16 +62,17 @@ SRCS = ft_putchar.c \
 	   ft_lstdel.c \
 	   ft_lstadd.c \
 	   ft_lstiter.c \
-	   ft_lstmap.c
+	   ft_lstmap.c \
+	   ft_sqrt.c
 
 LIBA = libft.a
 NAME = $(LIBA)
-HPATH = -Iincludes
+HPATH = -I.
 GCC_FLAGS = -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
-SRCDIR = srcs
-OBJDIR = objs
-AR = ar -cvq
+SRCDIR = ./
+OBJDIR = ./
+AR = ar -cq
 RM = rm -rf
 # standart
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
@@ -77,20 +82,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $@ $^
 	@ranlib $@
-	@echo 'Link [$@]'
 
 $(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(HPATH) -o $@ -c $^
 
 clean:
-	@$(RM) $(OBJDIR)
+	@$(RM) $(OBJS)
 
 fclean: clean
 	@$(RM) $(LIBA)
 
 re: fclean all
-
-test: all
-	gcc -L. ./test/main.c -lft -Iincludes
-	./a.out

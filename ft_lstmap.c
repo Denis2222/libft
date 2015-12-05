@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 21:42:14 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/27 11:28:49 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/11/27 13:12:05 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		else
 		{
 			new->next = (f)(lst);
+			new = new->next;
 			lst = lst->next;
 		}
 	}
