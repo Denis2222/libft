@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 11:29:40 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/12/14 17:56:47 by dmoureu-         ###   ########.fr       */
+/*   Created: 2015/12/08 00:27:38 by dmoureu-          #+#    #+#             */
+/*   Updated: 2015/12/12 14:12:02 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	*ft_memset(void *s, int c, size_t n)
+# include <stdio.h>
+# include <fcntl.h>
+
+# define BUFF_SIZE 8
+
+int				get_next_line(int const fd, char **line);
+
+typedef struct	s_file
 {
-	unsigned char	*str;
+	int			fd;
+	char		*buf;
+}				t_file;
 
-	str = (unsigned char *)s;
-	while (n--)
-	{
-		*str = (unsigned char)c;
-		if (n)
-			str++;
-	}
-	return (s);
-}
+#endif

@@ -6,11 +6,11 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:38:22 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/27 11:32:39 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/12/14 17:59:33 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_striter(char *s, void (*f)(char *))
 {

@@ -6,12 +6,11 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 21:14:15 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/27 11:44:00 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/12/14 18:03:17 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <libft.h>
+#include "libft.h"
 
 static int		istrimable(char c)
 {

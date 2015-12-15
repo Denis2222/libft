@@ -6,12 +6,11 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 13:14:57 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/27 11:45:46 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/12/14 18:02:36 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
+#include "libft.h"
 
 static int		ft_strsplit_count(char const *s, char c)
 {

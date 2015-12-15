@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:31:40 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/11/27 11:43:00 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/12/14 18:02:20 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ static void	ft_cswap(char *a, char *b)
 char		*ft_strrev(char *str)
 {
 	int length;
-	int debut;
-	int fin;
+	int start;
+	int end;
 
-	debut = 0;
+	start = 0;
 	length = ft_strlen(str);
-	fin = length - 1;
-	while (debut < fin)
+	end = length - 1;
+	while (start < end)
 	{
-		ft_cswap(&str[debut], &str[fin]);
-		debut++;
-		fin--;
+		ft_cswap(&str[start], &str[end]);
+		start++;
+		end--;
 	}
 	return (str);
 }

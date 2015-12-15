@@ -51,6 +51,7 @@ SRCS = ft_putchar.c \
 	   ft_strjoin.c \
 	   ft_strtrim.c \
 	   ft_strsplit.c \
+	   ft_tablen.c \
 	   ft_itoa.c \
 	   ft_putendl.c \
 	   ft_putchar_fd.c \
@@ -63,11 +64,12 @@ SRCS = ft_putchar.c \
 	   ft_lstadd.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
-	   ft_sqrt.c
+	   ft_lstlen.c \
+	   ft_sqrt.c \
+	   get_next_line.c
 
 LIBA = libft.a
 NAME = $(LIBA)
-HPATH = -Iincludes
 GCC_FLAGS = -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
 SRCDIR = ./
@@ -85,7 +87,7 @@ $(NAME): $(OBJS)
 
 $(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(HPATH) -o $@ -c $^
+	@$(CC) -o $@ -c $^
 
 clean:
 	@$(RM) $(OBJS)
