@@ -67,6 +67,8 @@ SRCS = ft_putchar.c \
 	   ft_sqrt.c \
 	   ft_tablen.c \
 	   ft_lstlen.c \
+	   ft_abs.c \
+	   ft_lstrev.c \
 	   get_next_line.c
 
 LIBA = libft.a
