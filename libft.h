@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/12/15 18:11:20 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2015/12/17 11:05:03 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int					ft_isblank(int c);
 int					ft_isspace(int c);
 char				*ft_strrev(char *str);
 char				*ft_strstr(char *str, const char *to_find);
-char				*ft_strnstr(char *str, const char *to_find, size_t n);
+char				*ft_strnstr(const char *str, const char *to_find, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strcat(char *dest, const char *src);
