@@ -62,6 +62,8 @@ SRCS = ft_putchar.c \
 	   ft_lstdelone.c \
 	   ft_lstdel.c \
 	   ft_lstadd.c \
+	   ft_lstpush.c \
+	   ft_lstpush_back.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
 	   ft_sqrt.c \
