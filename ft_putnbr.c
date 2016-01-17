@@ -14,5 +14,21 @@
 
 void	ft_putnbr(int nbr)
 {
-	ft_putstr(ft_itoa(nbr));
+	if (nbr < -2147483647)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + '0');
 }

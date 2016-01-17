@@ -40,7 +40,7 @@ char		*ft_itoa(int n)
 	int		length;
 	int		abs;
 
-	if (n <= -2147483648)
+	if (n < -2147483647)
 		return (ft_strdup("-2147483648"));
 	length = ft_itoa_length(n) + ft_itoa_sign(n);
 	abs = n;
