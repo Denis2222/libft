@@ -71,7 +71,25 @@ SRCS = ft_putchar.c \
 	   ft_lstlen.c \
 	   ft_abs.c \
 	   ft_lstrev.c \
-	   get_next_line.c
+	   get_next_line.c \
+	   printf/ft_printf.c \
+	   printf/addchar.c \
+	   printf/ft_itoa_base.c \
+	   printf/ft_putw.c \
+	   printf/ft_wcs.c \
+	   printf/is.c \
+	   printf/is2.c \
+	   printf/t_opts.c \
+	   printf/t_opts_analyse.c \
+	   printf/t_opts_analyse_width.c \
+	   printf/t_opts_put.c \
+	   printf/t_opts_render.c \
+	   printf/t_opts_render_numeric.c \
+	   printf/t_opts_tools.c \
+	   printf/t_opts_tools_prec.c \
+	   printf/bonus.c \
+	   printf/buffer.c \
+	   printf/tools.c
 
 LIBA = libft.a
 NAME = $(LIBA)

@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 13:44:19 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/12/14 18:03:54 by dmoureu-         ###   ########.fr       */
+/*   Created: 2016/02/26 22:01:50 by dmoureu-          #+#    #+#             */
+/*   Updated: 2016/03/02 10:10:45 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int		ft_tolower(int c)
+void	freestr(char *str)
 {
-	if (ft_isalpha(c) && c > 64 && c < 91)
-	{
-		return (c + 32);
-	}
-	return (c);
+	if (*str)
+		free(str);
+	str = NULL;
 }
 
-char	*ft_strtolower(char *str)
+void	freewstr(wchar_t *wstr)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		str[i] = ft_tolower(str[i]);
-		i++;
-	}
-	return (str);
+	if (*wstr && ft_wstrlen(wstr) > 0)
+		free(wstr);
+	wstr = NULL;
 }

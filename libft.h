@@ -6,7 +6,7 @@
 /*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/01/08 12:59:01 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/02/16 15:53:38 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include "get_next_line.h"
+# include "printf/ft_printf.h"
 
 int					ft_abs(int n);
 int					ft_atoi(const char *str);
@@ -53,6 +54,7 @@ char				*ft_strrchr(const char *s, int c);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+char				*ft_strtolower(char *str);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putnbr(int nbr);
