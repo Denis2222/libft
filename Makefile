@@ -44,6 +44,7 @@ SRCS = put/ft_putchar.c \
 	   str/ft_strjoin.c \
 	   str/ft_strtrim.c \
 	   str/ft_strsplit.c \
+	   str/ft_strrepchr.c \
 	   mem/ft_memset.c \
 	   mem/ft_memalloc.c \
 	   mem/ft_memdel.c \
