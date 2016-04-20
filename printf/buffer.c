@@ -3,32 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   buffer.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 00:17:03 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/03/02 10:06:49 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/20 11:55:41 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstrn(char *buffer, int len)
+void	ft_putstrn(char *buffer, int len, int fd)
 {
-	write(1, buffer, len);
+	write(fd, buffer, len);
 }
 
-void	ft_putstrbuf(char *str)
+void	ft_putstrbuf(char *str, int fd)
 {
 	while (*str)
 	{
-		ft_putbuffer(*str, 0);
+		ft_putbuffer(*str, 0, fd);
 		str++;
 	}
 }
 
-void	cleanbuffer(char **buffer, int *len, int *wc)
+void	cleanbuffer(char **buffer, int *len, int *wc, int fd)
 {
-	ft_putstrn(*buffer, *len);
+	ft_putstrn(*buffer, *len, fd);
 	if (*buffer)
 	{
 		freestr(*buffer);
@@ -38,14 +38,14 @@ void	cleanbuffer(char **buffer, int *len, int *wc)
 	*wc = 0;
 }
 
-void	ft_putbuffer(char c, int flush)
+void	ft_putbuffer(char c, int flush, int fd)
 {
 	static char	*buffer;
 	static int	wc;
 	static int	len;
 
 	if (flush || len > PRINTFBUFFER)
-		cleanbuffer(&buffer, &len, &wc);
+		cleanbuffer(&buffer, &len, &wc, fd);
 	if (!flush)
 	{
 		if (!len)

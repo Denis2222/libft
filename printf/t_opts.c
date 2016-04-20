@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_opts.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 16:07:39 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/03/02 10:10:23 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/20 12:09:45 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		cleanopts(t_opts *opts)
 	return (length);
 }
 
-int		renderopts(t_opts *opts, va_list *pa)
+int		renderopts(t_opts *opts, va_list *pa, int fd)
 {
 	char	*str;
 	wchar_t	*wstr;
@@ -88,11 +88,11 @@ int		renderopts(t_opts *opts, va_list *pa)
 	if (!istype(opts->type) && opts->type != '%')
 		str = render_opts_error(opts, pa, str);
 	if (str)
-		return (putoptsstr(opts, str));
+		return (putoptsstr(opts, str, fd));
 	else if (wstr)
-		return (putoptswstr(opts, wstr));
+		return (putoptswstr(opts, wstr, fd));
 	else
-		return (putoptsnull(opts));
+		return (putoptsnull(opts, fd));
 	return (0);
 }
 
