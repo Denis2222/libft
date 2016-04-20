@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 11:26:47 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/12/14 18:08:24 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/18 23:49:53 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static int	ft_atoi_white_allow(char c)
 			|| c == '\f');
 }
 
-int			ft_atoi(const char *str)
+long		ft_atoi(const char *str)
 {
-	int	nb;
-	int	length;
-	int	pos;
-	int	positive;
+	long	nb;
+	long	length;
+	long	pos;
+	long	positive;
 
 	pos = 0;
 	nb = 0;
