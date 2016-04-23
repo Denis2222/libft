@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/02/16 15:53:38 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/23 04:53:08 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,7 @@ t_list				*ft_lstrev(t_list *lst);
 int					ft_sqrt(int nb);
 int					ft_lstlen(t_list *lst);
 int					ft_tablen(char **tab);
+void				ft_tabfree(char **tab);
+char				*ft_strrepchrbystr(char *str, char c, char *rep);
 
 #endif

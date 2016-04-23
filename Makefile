@@ -30,6 +30,7 @@ SRCS = put/ft_putchar.c \
 	   str/ft_strnstr.c \
 	   str/ft_strchr.c \
 	   str/ft_strrchr.c \
+	   str/ft_strrepchrbystr.c \
 	   str/ft_strlcat.c \
 	   str/ft_strnew.c \
 	   str/ft_strdel.c \
@@ -68,6 +69,7 @@ SRCS = put/ft_putchar.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
 	   ft_tablen.c \
+	   ft_tabfree.c \
 	   ft_itoa.c \
 	   ft_sqrt.c \
 	   ft_tablen.c \
