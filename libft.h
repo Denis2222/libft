@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/04/23 04:53:08 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/23 11:43:56 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "printf/ft_printf.h"
 
 int					ft_abs(int n);
-int					ft_atoi(const char *str);
+long				ft_atoi(const char *str);
 size_t				ft_strlen(const char *str);
 int					ft_strcmp(char *s1, const char *s2);
 int					ft_strncmp(char *s1, const char *s2, size_t n);

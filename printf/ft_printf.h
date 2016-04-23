@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:01:51 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/03/02 10:06:55 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/04/20 13:28:39 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define PRINTFBUFFER 400
 
 int					ft_printf(char *format, ...);
+int					ft_dprintf(int fd, char *format, ...);
 
 typedef struct		s_opts
 {
@@ -56,7 +57,7 @@ typedef struct		s_opts
 
 t_opts				*newopts(char *format, int *pos, va_list *pa);
 t_opts				*addopts(t_opts **lst, t_opts *new);
-int					renderopts(t_opts *opts, va_list *pa);
+int					renderopts(t_opts *opts, va_list *pa, int fd);
 void				initopts(t_opts *opts, char *startopts, int *pos);
 int					optsflag(t_opts *opts, char *str);
 int					cleanopts(t_opts *opts);
@@ -81,8 +82,8 @@ wchar_t				*ft_wcscpy(wchar_t *dest, wchar_t *src);
 wchar_t				*ft_wcsdup(wchar_t *src);
 wchar_t				*ft_wcscat(wchar_t *dest, const wchar_t *src);
 
-void				ft_putwchar(wchar_t c);
-void				ft_putwstr(wchar_t *wstr);
+void				ft_putwchar(wchar_t c, int fd);
+void				ft_putwstr(wchar_t *wstr, int fd);
 
 char				*ft_itoa_base(intmax_t value, int base);
 char				*ft_uitoa_base(uintmax_t value, int base);
@@ -132,16 +133,16 @@ void				freestr(char *str);
 void				freewstr(wchar_t *wstr);
 void				printfclean(t_printf *pf);
 
-int					putoptsstr(t_opts *opts, char *str);
-int					putoptswstr(t_opts *opts, wchar_t *wstr);
-int					putoptsnull(t_opts *opts);
+int					putoptsstr(t_opts *opts, char *str, int fd);
+int					putoptswstr(t_opts *opts, wchar_t *wstr, int fd);
+int					putoptsnull(t_opts *opts, int fd);
 
-void				evalcolor(char **format, va_list *pa, int len);
+void				evalcolor(char **format, va_list *pa, int len, int fd);
 void				incremente(char **format, int *pos);
 
-void				ft_putstrn(char *buffer, int len);
-void				ft_putbuffer(char c, int way);
+void				ft_putstrn(char *buffer, int len, int fd);
+void				ft_putbuffer(char c, int way, int fd);
 void				ft_printbuffer(char *buffer, int len);
-void				ft_putstrbuf(char *str);
+void				ft_putstrbuf(char *str, int fd);
 
 #endif
