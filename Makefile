@@ -68,7 +68,6 @@ SRCS = put/ft_putchar.c \
 	   ft_bzero.c \
 	   ft_tolower.c \
 	   ft_toupper.c \
-	   ft_tablen.c \
 	   ft_tabfree.c \
 	   ft_itoa.c \
 	   ft_sqrt.c \
