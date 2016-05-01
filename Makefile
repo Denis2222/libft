@@ -16,6 +16,7 @@ SRCS = put/ft_putchar.c \
 	   is/ft_isblank.c \
 	   is/ft_isspace.c \
 	   str/ft_strcmp.c \
+	   str/ft_streachr.c \
 	   str/ft_strlen.c \
 	   str/ft_strcat.c \
 	   str/ft_strcmp.c \

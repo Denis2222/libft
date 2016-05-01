@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 00:17:03 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/04/20 11:55:41 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/01 15:45:40 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,24 @@ void	ft_putstrbuf(char *str, int fd)
 	}
 }
 
-void	cleanbuffer(char **buffer, int *len, int *wc, int fd)
+char	*cleanbuffer(char **buffer, int *len, int *wc, int fd)
 {
-	ft_putstrn(*buffer, *len, fd);
+	char	*tmp;
+
+	if (fd == -10)
+	{
+		tmp = ft_strdup(*buffer);
+		if (*buffer)
+		{
+			freestr(*buffer);
+			*buffer = NULL;
+		}
+		*len = 0;
+		*wc = 0;
+		return (tmp);
+	}
+	else
+		ft_putstrn(*buffer, *len, fd);
 	if (*buffer)
 	{
 		freestr(*buffer);
@@ -36,14 +51,17 @@ void	cleanbuffer(char **buffer, int *len, int *wc, int fd)
 	}
 	*len = 0;
 	*wc = 0;
+	return (NULL);
 }
 
-void	ft_putbuffer(char c, int flush, int fd)
+char	*ft_putbuffer(char c, int flush, int fd)
 {
 	static char	*buffer;
 	static int	wc;
 	static int	len;
 
+	if (flush && fd == -10)
+		return (cleanbuffer(&buffer, &len, &wc, fd));
 	if (flush || len > PRINTFBUFFER)
 		cleanbuffer(&buffer, &len, &wc, fd);
 	if (!flush)
@@ -58,4 +76,5 @@ void	ft_putbuffer(char c, int flush, int fd)
 		wc++;
 		len++;
 	}
+	return (NULL);
 }

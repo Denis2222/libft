@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/13 20:28:06 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/04/20 13:28:20 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/01 15:00:45 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,32 @@ int		ft_dprintf(int fd, char *format, ...)
 	va_end(pa);
 	ft_putbuffer(0, 1, fd);
 	return (len);
+}
+
+char	*ft_mprintf(char *format, ...)
+{
+	va_list		pa;
+	t_opts		*new;
+	int			pos;
+	int			len;
+
+	intinit(&len, &pos);
+	if (!format)
+		return (NULL);
+	va_start(pa, format);
+	while (*format)
+	{
+		evalcolor(&format, &pa, len, 1);
+		if (*format == '%')
+		{
+			new = newopts(format, &pos, &pa);
+			len += renderopts(new, &pa, 1);
+			format += cleanopts(new);
+		}
+		else
+			writechar(*format, &len, 1);
+		incremente(&format, &pos);
+	}
+	va_end(pa);
+	return (ft_putbuffer(0, 1, -10));
 }

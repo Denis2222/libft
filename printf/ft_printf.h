@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 14:01:51 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/04/20 13:28:39 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/01 15:45:40 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 
 int					ft_printf(char *format, ...);
 int					ft_dprintf(int fd, char *format, ...);
+char				*ft_mprintf(char *format, ...);
 
 typedef struct		s_opts
 {
@@ -141,7 +142,7 @@ void				evalcolor(char **format, va_list *pa, int len, int fd);
 void				incremente(char **format, int *pos);
 
 void				ft_putstrn(char *buffer, int len, int fd);
-void				ft_putbuffer(char c, int way, int fd);
+char				*ft_putbuffer(char c, int way, int fd);
 void				ft_printbuffer(char *buffer, int len);
 void				ft_putstrbuf(char *str, int fd);
 
