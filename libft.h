@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/01 13:20:48 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/01 22:28:18 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ int					ft_tablen(char **tab);
 void				ft_tabfree(char **tab);
 char				*ft_strrepchrbystr(char *str, char c, char *rep);
 int					ft_streachr(char *str, int(f)(int));
+int					ft_strcountchr(char *str, char chr);
 
 #endif
