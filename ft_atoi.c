@@ -22,12 +22,12 @@ static int	ft_atoi_white_allow(char c)
 			|| c == '\f');
 }
 
-long		ft_atoi(const char *str)
+intmax_t	ft_atoi(const char *str)
 {
-	long	nb;
-	long	length;
-	long	pos;
-	long	positive;
+	intmax_t	nb;
+	long		length;
+	long		pos;
+	long		positive;
 
 	pos = 0;
 	nb = 0;

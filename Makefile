@@ -75,6 +75,7 @@ SRCS = put/ft_putchar.c \
 	   ft_sqrt.c \
 	   ft_tablen.c \
 	   ft_abs.c \
+	   ft_pow.c \
 	   get_next_line.c \
 	   printf/ft_printf.c \
 	   printf/addchar.c \

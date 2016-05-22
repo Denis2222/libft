@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 11:26:12 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/18 13:18:13 by dmoureu-         ###   ########.fr       */
+/*   Created: 2016/05/20 02:22:16 by dmoureu-          #+#    #+#             */
+/*   Updated: 2016/05/20 02:31:47 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+long	ft_pow(int nb, int e)
 {
-	ft_putstr_fd(str, 1);
+	int		i;
+	long	total;
+
+	i = 1;
+	if (e == 0)
+		return (1);
+	total = nb;
+	while (i < e)
+	{
+		total *= nb;
+		i++;
+	}
+	return (total);
 }

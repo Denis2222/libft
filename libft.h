@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/01 22:28:18 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/20 02:26:46 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "printf/ft_printf.h"
 
 int					ft_abs(int n);
-long				ft_atoi(const char *str);
+intmax_t			ft_atoi(const char *str);
 size_t				ft_strlen(const char *str);
 int					ft_strcmp(char *s1, const char *s2);
 int					ft_strncmp(char *s1, const char *s2, size_t n);
@@ -73,6 +73,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
+char				*ft_strtrimfree(char *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 void				ft_putendl(char const *s);
@@ -99,6 +100,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstrev(t_list *lst);
 
 int					ft_sqrt(int nb);
+long				ft_pow(int nb, int e);
 int					ft_lstlen(t_list *lst);
 int					ft_tablen(char **tab);
 void				ft_tabfree(char **tab);

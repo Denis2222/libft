@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dmoureu- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 21:14:15 by dmoureu-          #+#    #+#             */
-/*   Updated: 2015/12/14 18:03:17 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/18 14:58:22 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,13 @@ char			*ft_strtrim(char const *s)
 		i--;
 	}
 	return (ft_strsub(s, start, end - start));
+}
+
+char			*ft_strtrimfree(char *s)
+{
+	char *str;
+
+	str = ft_strtrim(s);
+	ft_strdel(&s);
+	return (str);
 }
