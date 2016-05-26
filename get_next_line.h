@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 00:27:38 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/22 09:18:32 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/26 17:32:19 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # define BUFF_SIZE 1024
 
 int				get_next_line(int const fd, char **line);
+int				get_next_line_single(int const fd, char **line);
 
 typedef struct	s_file
 {

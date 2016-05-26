@@ -77,6 +77,7 @@ SRCS = put/ft_putchar.c \
 	   ft_abs.c \
 	   ft_pow.c \
 	   get_next_line.c \
+	   get_next_oren.c \
 	   printf/ft_printf.c \
 	   printf/addchar.c \
 	   printf/ft_itoa_base.c \
