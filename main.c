@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 01:20:13 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/27 07:25:47 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/27 09:49:23 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,13 +109,13 @@ void	print_piece(t_filler *filler)
 	int	i;
 
 	i = 0;
-	ft_dprintf(2, "\n################ piece #####################\n");
+	ft_dprintf(2, "\n{inv}################ piece w:%d h:%d#####################\n", filler->piece_x, filler->piece_y);
 	while (filler->piece[i])
 	{
 		ft_dprintf(2, "%s\n", filler->piece[i]);
 		i++;
 	}
-	ft_dprintf(2, "##########################################\n");
+	ft_dprintf(2, "##########################################{eoc}\n");
 }
 
 
@@ -139,7 +139,7 @@ int		check_map_case(t_filler *filler, int x, int y)
 	{
 		if (y >= 0 && y < filler->map_y)
 		{
-			//ft_dprintf(2," val: [%c] ", filler->map[y][x]);
+			//ft_dprintf(2,"{blue} val: x:%d y:%d[%c] {eoc}",x, y, filler->map[y][x]);
 			if (filler->map[y][x] == '.')
 				return (0);
 			if (filler->map[y][x] == 'o' || filler->map[y][x] == 'O')
@@ -162,18 +162,25 @@ int		pos_piece_valide(t_filler *filler, int x, int y)
 	touch = 0;
 	while (py < filler->piece_y)
 	{
+		//ft_dprintf(2, "WTF!!!!!!!!!!!!");
+		px = 0;
 		while (px < filler->piece_x)
 		{
+			//ft_dprintf(2, "p[x:%d y:%d] ", px, py);
 			if (filler->piece[py][px] == '*')
 			{
-				//ft_dprintf(2, "check:(x:%d;y:%d) %d \n", px + x, py + y, check_map_case(filler, px + x, py + y));
+				//print_piece(filler);
+				//ft_dprintf(2, "\n{green} * check:(x:%d,y:%d) %d{eoc} \n", px + x, py + y,check_map_case(filler, px + x, py + y));
 				if (check_map_case(filler, px + x, py + y) == filler->player)
 				{
 					//ft_dprintf(2," touch x:%d y:%d", px+x, py+y);
 					touch++;
 				}
 				else if (check_map_case(filler, px + x, py + y) != 0)
+				{
+					//ft_dprintf(2, "{blink}error[y:%d x:%d] {eoc}\n", py + y, px + x);
 					return (0);
+				}
 			}
 			px++;
 		}
@@ -181,7 +188,8 @@ int		pos_piece_valide(t_filler *filler, int x, int y)
 	}
 	if (touch == 1)
 	{
-		ft_dprintf(2, "pos valide: x:%d y:%d\n", x, y);
+		usleep(5000);
+		//ft_dprintf(2, "pos valide: x:%d y:%d\n", x, y);
 		return (1);
 	}
 	return (0);
@@ -198,7 +206,7 @@ int		search_position(t_filler *filler)
 		x = -1;
 		while (x < filler->map_x)
 		{
-			//ft_dprintf(2, "check :%d y:%d => %d\n", x, y, pos_piece_valide(filler, x, y));
+			//ft_dprintf(2, "\n{red}check y:%d x:%d => %d{eoc}\n", y, x, pos_piece_valide(filler, x, y));
 			if (pos_piece_valide(filler, x, y))
 			{
 				ft_dprintf(1, "%d %d\n", y, x);
@@ -206,7 +214,6 @@ int		search_position(t_filler *filler)
 			}
 			x++;
 		}
-		//ft_dprintf(2, "next y\n");
 		y++;
 	}
 	return (0);
@@ -220,45 +227,26 @@ int	main(void)
 
 	filler = newfiller();
 	i = 0;
-	while (get_next_line(0, &buffer) > 0)
+	while (get_next_line_single(0, &buffer) > 0)
 	{
 		//ft_dprintf(2, "#############[%s]{%d}\n", buffer, i);
 		if (i == 0)
-		{
 			if (!(filler->player = check_name(buffer)))
 				return (0);
-			ft_dprintf(2, "player : %d", filler->player);
-		}
 		if (i == 1)
-		{
 			if (!check_map_size(buffer, filler))
 				return (0);
-		}
 		if (i > 2 && i < filler->map_y + 3)
-		{
 			store_map(filler, buffer, i - 3);
-		}
 		if (i == filler->map_y + 3)
-		{
 			if (!check_piece_size(buffer, filler))
 				return (0);
-		}
 		if (i > filler->map_y + 3 && i < filler->map_y + 4 + filler->piece_y)
-		{
 			store_piece(filler, buffer, i - (filler->map_y + 4));
-			//ft_dprintf(2, "store piece %s where: %d\n", buffer, i - (filler->map_y + 4));
-		}
 		if (i == filler->map_y + 3 + filler->piece_y)
 		{
-			//ft_dprintf(2, "This Is The End");
-
-			//ft_dprintf(2, "3/16 : %c 3/17 : %c \n", filler->map[3][16], filler->map[3][17]);
-			//ft_dprintf(2, "10/16 : %c 10/17 : %c \n", filler->map[10][16], filler->map[10][17]);
-
-			//ft_dprintf(2, "0/2 : %c \n", filler->piece[0][0]);
-			print_piece(filler);
-			print_map(filler);
-			search_position(filler);
+			if (!search_position(filler))
+				ft_dprintf(1, "0 0\n");
 			i = 0;
 		}
 		ft_strdel(&buffer);
