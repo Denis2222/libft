@@ -1,12 +1,11 @@
 $$$ exec p1 : [./filler]
 Plateau 5 5:
     01234
-000 OOOOo
+000 TOOio
 001 OOOOo
-002 Oooo.
-003 .OX..
-004 .....
-Piece 3 2:
+
+
+Piece 1 1:
 *.
 *.
 *.

@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/27 01:20:13 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/27 18:37:43 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2016/05/27 19:04:00 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,6 @@ int	store_piece(t_filler *filler, char *buffer, int y)
 {
 	filler->piece[y] = ft_strncpy(filler->piece[y], buffer, filler->piece_x);
 	return (0);
-}
-
-int	pos_piece_valide(t_filler *filler, int x, int y)
-{
-	int touch;
-	int	px;
-	int	py;
-
-	py = -1;
-	touch = 0;
-	while (++py < filler->piece_y && (px = -1))
-		while (++px < filler->piece_x)
-		{
-			if (filler->piece[py][px] == '*')
-			{
-				if (check_map_case(filler, px + x, py + y) == filler->player)
-					touch++;
-				else if (check_map_case(filler, px + x, py + y) != 0)
-					return (0);
-			}
-			else if (filler->piece[py][px] == '.' &&
-				check_map_case(filler, px + x, py + y) == -1)
-				return (0);
-		}
-	return (touch == 1 ? 1 : 0);
 }
 
 int	gnl_check(t_filler *filler, char *buffer, int i)
