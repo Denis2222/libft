@@ -1,7 +1,11 @@
-SRCS = main.c
+SRCS = main.c \
+		filler.c \
+		check.c \
+		search.c \
+		
 
 NAME = filler
-GCC_FLAGS = -Wall -Werror -Wextra
+GCC_FLAGS = -g -Wall -Werror -Wextra
 CC = gcc $(GCC_FLAGS)
 SRCDIR = ./
 OBJDIR = ./objs
