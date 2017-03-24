@@ -1,11 +1,13 @@
 SRCS = put/ft_putchar.c \
 	   put/ft_putstr.c \
 	   put/ft_putnbr.c \
+	   put/ft_putptr.c \
 	   put/ft_putendl.c \
 	   put/ft_putchar_fd.c \
 	   put/ft_putstr_fd.c \
 	   put/ft_putendl_fd.c \
 	   put/ft_putnbr_fd.c \
+	   put/ft_putulongnbr.c \
 	   is/ft_isprint.c \
 	   is/ft_isdigit.c \
 	   is/ft_isalpha.c \

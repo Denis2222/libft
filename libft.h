@@ -6,7 +6,7 @@
 /*   By: dmoureu- <dmoureu-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:35:10 by dmoureu-          #+#    #+#             */
-/*   Updated: 2016/05/20 02:26:46 by dmoureu-         ###   ########.fr       */
+/*   Updated: 2017/03/24 05:39:18 by dmoureu-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char				*ft_strtolower(char *str);
 void				ft_putchar(char c);
 void				ft_putstr(char *str);
 void				ft_putnbr(int nbr);
+void				ft_putptr(void *ptr);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 char				*ft_strnew(size_t size);
@@ -81,6 +82,8 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putulongnbr_fd(unsigned long nbr, int fd);
+void				ft_putulongnbr(unsigned long nbr);
 
 typedef struct		s_list
 {
