@@ -97,7 +97,8 @@ SRCS = put/ft_putchar.c \
 	   printf/t_opts_tools_prec.c \
 	   printf/bonus.c \
 	   printf/buffer.c \
-	   printf/tools.c
+	   printf/tools.c \
+	   argvise.c
 
 LIBA = libft.a
 NAME = $(LIBA)
